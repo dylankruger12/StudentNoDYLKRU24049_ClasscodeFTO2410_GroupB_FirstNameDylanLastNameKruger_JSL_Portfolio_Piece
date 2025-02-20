@@ -20,7 +20,18 @@ function initializeData() {
 }
 
 // TASK: Get elements from the DOM
-const elements = {
+const elements = { 
+  headerBoardName: document.getElementById('header-board-name'),
+  columnDivs: document.querySelector('column-div'),
+  editTaskModal: document.querySelector('edit-task-modal-window'),
+  modalWindow: document.getElementById('new-task-modal-window'),
+  filterDiv: document.getElementById('filterDiv'),
+  hideSideBarBtn: document.getElementById('hide-side-bar-btn'),
+  showSideBarBtn: document.getElementById('show-side-bar-btn'),
+  themeSwitch: document.getElementById('switch'),
+  createNewTaskBtn: document.getElementById('add-new-task-btn'),
+  sideBar: document.getElementById('side-bar-div'),
+
 
 }
 
@@ -194,7 +205,10 @@ function addTask(event) {
 
   //Assign user input to the task object
     const task = {
-      
+      title: document.getElementById('title-input').value,
+      description: document.getElementById('desc-input').value,
+      status: document.getElementById('select-status').value,
+      board: activeBoard 
     };
     const newTask = createNewTask(task);
     if (newTask) {
@@ -208,6 +222,7 @@ function addTask(event) {
 
 
 function toggleSidebar(show) {
+  elements.sideBar.style.display
  
 }
 
